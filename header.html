@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
+		<style>
+			a {
+    color: inherit;
+    text-decoration: none;
+	}
+	.ex1_wrap {
+			position: relative;background: #666;
+		}
+		.ex1_wrap header {
+			display: flex;justify-content: space-between;
+			align-items: center;
+			position: absolute;left: 0;right: 0;
+			padding: 0 210px;margin: 0;color: #FFF;
+		}
+		.ex1_wrap header h1 a {
+			display: block;width: 134px;height: 42px;
+			background: gold;
+		}
+		.ex1_wrap header nav ul#gnb {display: flex;}
+		.ex1_wrap header nav ul#gnb>li {position: relative;}
+		.ex1_wrap header nav ul#gnb>li>a {
+			display: flex;justify-content: center;
+			align-items: center;position: relative;
+			width: 142px;height: 100px;
+			font-size: 18px;font-weight: 600;
+		}
+		.ex1_wrap header nav ul#gnb>li>a::after {
+			content:"";position: absolute;left: 50%;right: 50%;bottom: 0;height: 4px;background: red;
+			transition: all 0.5s
+		}
+		.ex1_wrap header nav ul#gnb>li.over>a::after {
+			left: 0;right: 0;
+		}
+		.ex1_wrap header nav ul#gnb ul {/*background: pink;*/
+			display: none;flex-direction: column;gap: 20px;
+			/*align-items: center; */ text-align: center;
+			position: absolute;left: 0;right: 0;top: 100px;
+			z-index: 1;padding: 35px 0;
+		}
+		/*p.aa {} aa라는 클래스를 가진 요소 중 p태그*/
+		.ex1_wrap header.on {
+			border-bottom: 1px solid #CCC;
+			background: #FFF;color: #333;
+		}
+		.ex1_wrap header::after {
+			content:"";
+			position: absolute;left: 0;right: 0;top: 101px;
+			height: 0;opacity: 0;
+			background: #FFF;transition: all 0.5s;
+		}
+		.ex1_wrap header.on::after {height: 350px;opacity: 1;}
+		.ex1_wrap header.on ul#gnb ul {display: flex;}
+		
+		.ex1_wrap main {
+			height: 100vh;
+			background: url(https://images.unsplash.com/photo-1481988535861-271139e06469?q=80&w=2090&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) center no-repeat;
+			background-size: cover;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="ex1_wrap">
+			<header>
+				<h1><a href="#">노랑풍선</a></h1>
+				<nav>
+					<ul id="gnb">
+						<li><a href="#">회사소개</a>
+							<ul>
+								<li><a href="#">회사소개</a></li>
+								<li><a href="#">대표인사말</a></li>
+								<li><a href="#">연혁</a></li>
+								<li><a href="#">고객만족경영</a></li>
+								<li><a href="#">윤리경영</a></li>
+								<li><a href="#">CI소개</a></li>
+								<li><a href="#">오시는길</a></li>
+							</ul>
+						</li>
+						<li><a href="#">투자정보</a>
+							<ul>
+								<li><a href="#">재무정보</a></li>
+								<li><a href="#">공고사항</a></li>
+							</ul>
+						</li>
+						<li><a href="#">대리점안내</a>
+							<ul>
+								<li><a href="#">대리점소개</a></li>
+								<li><a href="#">개설신청안내</a></li>
+							</ul>
+						</li>
+						<li><a href="#">홍보센터</a>
+							<ul>
+								<li><a href="#">사회공헌</a></li>
+								<li><a href="#">보도기사</a></li>
+							</ul>
+						</li>
+						<li><a href="#">채용정보</a>
+							<ul>
+								<li><a href="#">인재상</a></li>
+								<li><a href="#">복지제도</a></li>
+								<li><a href="#">채용정보</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<div class="search">
+					search
+				</div>
+				<!-- ::after -->
+			</header>
+			<main>main</main>
+		</div>
+
+		<script>
+			const ex1 = document.querySelector('.ex1_wrap header');
+			const menuItems = document.querySelectorAll('.ex1_wrap header #gnb > li');
+
+			menuItems.forEach((item) => {
+				item.addEventListener('mouseover', function () {
+					ex1.classList.add('on');
+					this.classList.add('over');
+				});
+
+				item.addEventListener('mouseout', function () {
+					ex1.classList.remove('on');
+					this.classList.remove('over');
+				});
+			});
+		</script>
+	</body>
+</html>

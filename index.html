@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동아오츠카</title>
+    <!-- 파비콘 css안되니까 디자인프로그램에서 16px 16px 보통 이렇게 함! -->
+    <link rel="icon" href="./img/Asset 4.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.min.css"./>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.min.css">
+    <link rel="stylesheet" href="./font/main.css">
+    <link rel="stylesheet" href="./css/main.css">
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollToPlugin.min.js"></script>
+    <script src="./js/main.js" defer></script>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <h1><a href="#"><span class="blind">동아오츠카</span></a></h1>
+            <nav id="gnb">
+                <ul class="dep1">
+                    <li>
+                        <a href="#">기업소개</a>
+                        <ul class="dep2">
+                            <li><a href="#">동아오츠카</a></li>
+                            <li><a href="#">연혁</a></li>
+                            <li><a href="#">오시는 길</a></li>
+                            <li><a href="#">위치안내</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">브랜드</a>
+                        <ul class="dep2">
+                            <li><a href="#">신제품</a></li>
+                            <li><a href="#">이온음료</a></li>
+                            <li><a href="#">탄산음료</a></li>
+                            <li><a href="#">비타민음료</a></li>
+                            <li><a href="#">커피&차</a></li>
+                            <li><a href="#">생수&탄산수</a></li>
+                            <li><a href="#">일반음료</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">ESG</a>
+                        <ul class="dep2">
+                            <li><a href="#">정도경영</a></li>
+                            <li><a href="#">인권경영</a></li>
+                            <li><a href="#">안전보건경영</a></li>
+                            <li><a href="#">윤리경영</a></li>
+                            <li><a href="#">환경경영</a></li>
+                            <li><a href="#">공급망관리</a></li>
+                            <li><a href="#">CSR</a></li>
+                            <li><a href="#">통합보고서</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">홍보센터</a>
+                        <ul class="dep2">
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">뉴스자료실</a></li>
+                            <li><a href="#">CF스토리</a></li>
+                            <li><a href="#">이벤트</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">고객센터</a>
+                        <ul class="dep2">
+                            <li><a href="#">고객의소리</a></li>
+                            <li><a href="#">고객상담센터</a></li>
+                            <li><a href="#">피해보상기준</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header_util">
+                <div class="lang_wrap">
+                    <button>KOR<i class="ri-arrow-down-s-fill"></i></button>
+                    <ul>
+                        <li><a href="#">KOR</a></li>
+                        <li><a href="#">ENG</a></li>
+                        <li><a href="#">JAP</a></li>
+                    </ul>
+                </div>               
+                <div class="search_wrap">
+                    <button>
+                        <i class="ri-search-line"></i>
+                        <span class="blind">검색창열기</span>
+                    </button>    
+                </div>
+                <div class="shop_wrap">
+                    <button>
+                        <i class="ri-store-2-line"></i>
+                    </button>    
+                </div>
+                <div class="header_menu">
+                    <i class="ri-menu-3-fill"></i>
+                </div>             
+            </div>
+            <div class="search_box">
+                <h2>SEARCH</h2>
+                <form>
+                    <input type="text" placeholder="검색어를 입력하세요">
+                    <button type="submit">
+                        <i class="ri-search-line"></i>
+                        <span class="blind">검색하기</span>
+                    </button>
+                </form>
+            </div>
+            <div class="header_menu_popup">
+                <h1><a href="#"><span class="blind">동아오츠카</span></a></h1>
+                <i class="ri-close-line"></i>
+                <ul class="dep1">
+                    <li>
+                        <a href="#">회사소개<i class="ri-add-line"></i></a>
+                        <ul class="dep2">
+                            <li><a href="#">동아오츠카</a></li>
+                            <li><a href="#">연혁</a></li>
+                            <li><a href="#">오시는 길</a></li>
+                            <li><a href="#">위치안내</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">브랜드<i class="ri-add-line"></i></a>
+                        <ul class="dep2">
+                            <li><a href="#">신제품</a></li>
+                            <li><a href="#">이온음료</a></li>
+                            <li><a href="#">탄산음료</a></li>
+                            <li><a href="#">비타민음료</a></li>
+                            <li><a href="#">커피&차</a></li>
+                            <li><a href="#">생수&탄산수</a></li>
+                            <li><a href="#">일반음료</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">ESG<i class="ri-add-line"></i></a>
+                        <ul class="dep2">
+                            <li><a href="#">정도경영</a></li>
+                            <li><a href="#">인권경영</a></li>
+                            <li><a href="#">안전보건경영</a></li>
+                            <li><a href="#">윤리경영</a></li>
+                            <li><a href="#">환경경영</a></li>
+                            <li><a href="#">공급망관리</a></li>
+                            <li><a href="#">CSR</a></li>
+                            <li><a href="#">통합보고서</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">홍보센터<i class="ri-add-line"></i></a>
+                        <ul class="dep2">
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">뉴스자료실</a></li>
+                            <li><a href="#">CF스토리</a></li>
+                            <li><a href="#">이벤트</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">고객센터<i class="ri-add-line"></i></a>
+                        <ul class="dep2">
+                            <li><a href="#">고객의소리</a></li>
+                            <li><a href="#">고객상담센터</a></li>
+                            <li><a href="#">피해보상기준</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- 메인 -->
+    <!-- 섹션1 -->
+    <main id="main_content">
+        <div class="main_visual">
+            <div class="main-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <video src="./img/mainvisual-11.mp4" autoplay muted loop></video>
+                        <span>당신의 건강이 행복입니다. 건강을 생각하는 음료 동아오츠카</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <video src="./img/mainvisual-taeyeon.mp4" autoplay muted loop></video>
+                        <span >동아오츠카 제조 / 나랑드 사이다, 내 마음을 담아!</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <video src="./img/mainvisual-wonhee.mp4" autoplay muted loop></video>
+                        <span>포카리스트 제조 / 땀으로 잃어버린 수분과 전해질을 채워주세요.</span>
+                    </div>
+                </div>
+                <div class="main_slide_mode">
+                    <div class="swiper-prev swiper_btn"></div>
+                    <div class="progress"><div class="bar"></div></div>
+                    <div class="swiper-pagination"></div>
+                    <button class="btn-play-stop">
+                        <i class="ri-pause-line"></i>
+                    </button>
+                    <div class="swiper-next swiper_btn"></div>
+                </div> 
+            </div>
+        </div>
+
+        <!-- 섹션2 -->
+        <section class="brand_story_wrap">
+            <div class="pin_name">
+                <span>&boxh; Donga-Otsuka</span>
+            </div>  
+            <div class="brand_container">
+                <div class="brand_story_img">
+                    <!-- <img src="./Image/브랜드스토리-회의.jpg" alt=""> CSS 넣기 -->
+                    <div class="brand_conbox">
+                        <p>동아오츠카㈜ 창립에서 현재까지, <br> 세계적인 기업으로 거듭나기 위해 노력하겠습니다.</p>
+                        <a href="#" class="view_more">View more
+                            <!-- <i class="ri-arrow-right-up-long-line"></i> -->
+                        </a>
+                    </div>
+                    <ul>
+                        <li class="brand_sory_list">
+                            <span>3,497억 원의 매출 시현<br>영업이익 연간 39.1% 성장<br></span>  
+                            <strong>3,497억원</strong>
+                        </li>
+                        <li class="brand_sory_list">
+                            <span>전년 대비 포카리스웨트<br>
+                            매출액 242억 원 증가<br></span>  
+                            <strong>242억원↑</strong>
+                        </li>
+                        <li class="brand_sory_list">
+                            <span>칠서공장 90KW 규모의<br>
+                            태양광 발전설비 설치<br></span>  
+                            <strong>태양광 발전설비</strong>
+                        </li>
+                        <li class="brand_sory_list">
+                            <span>2023년 소비자<br> ESG혁신대상<br></span>  
+                            <strong>제품혁신상 수상</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션3 -->
+        <section class="esg_wrap">
+            <div class="pin_name">
+                <span>&boxh; sustainability</span>
+            </div> 
+            <div class="container">
+                <div class="esg_content">
+                    <div class="esg_event_left">
+                        <hgroup>
+                            <h2>ESG</h2>
+                            <p>협력사는 기본과 원칙을 준수하며 투명하고 올바른 의사결정을 <br>바탕으로 사회적 책임을 다하기 위해 노력해야 합니다.
+                            </p>
+                            <a href="#" class="view_more">View more
+                            <!-- <i class="ri-arrow-right-up-long-line"></i> -->
+                            </a>
+                        </hgroup>
+                    </div>
+                    <div class="preview_swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <!-- <img class="slide_image" src="img/esg-environment.jpeg" alt=""> -->
+                                    <div class="hover_bg"><!--positon-->
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </div>
+                                    <div class="hover_text"><!--position / transition-->
+                                        <div class="e_text1">환경경영</div>
+                                        <div class="e_text2">동아오츠카는 환경보전과 고객요구에 의한 환경개선을<br> 최우선으로 생각하는 녹색경영기업을 경영목표로 한다.
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img class="slide_image" src="" alt="">
+                                    <div class="hover_bg">
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </div>
+                                    <div class="hover_text">
+                                        <div class="e_text1">인권경영</div>
+                                        <div class="e_text2">인류의 건강과 행복을 위한 끝없는 도전
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img class="slide_image" src="" alt="">
+                                    <div class="hover_bg">
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </div>
+                                    <div class="hover_text">
+                                        <div class="e_text1">안전보건건경영</div>
+                                        <div class="e_text2">동아오츠카는 환경보전과 고객요구에 의한 환경개선을<br> 최우선으로 생각하는 녹색경영기업을 경영목표로 한다.
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img class="slide_image" src="" alt="">
+                                    <div class="hover_bg">
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </div>
+                                    <div class="hover_text">
+                                        <div class="e_text1">준법경영</div>
+                                        <div class="e_text2">근로자의 참여와 협의를 바탕으로 안전보건관리체계 구축, 운영
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img class="slide_image" src="" alt="">
+                                    <div class="hover_bg">
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </div>
+                                    <div class="hover_text">
+                                        <div class="e_text1">정도경영</div>
+                                        <div class="e_text2">동아쏘시오그룹 경영철학인 정도경영(鼎道經營)은 곧 ‘사회책임경영’입니다.
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img class="slide_image" src="" alt="">
+                                    <div class="hover_bg">
+                                        <i class="ri-arrow-right-long-line"></i>
+                                    </div>
+                                    <div class="hover_text">
+                                        <div class="e_text1">CSR</div>
+                                        <div class="e_text2">'건강' '환경' '사람' '사회' 사업영역에서 다양한 사회공헌 사업을 전개하고 있으며, 임직원의 자발적인 참여 문화 구축에도 앞장서고 있습니다.
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="event_thumb swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션4 -->
+        <section class="product_wrap">
+            <div class="pin_name">
+                <span>&boxh; Product</span>
+            </div>
+            <div class="container">
+                <hgroup>
+                    <h2>Best Seller</h2>
+                    <p>소비자의 요구에 맞게 맛과 기능을 함께 제공하는<br> 기능성 음료 시장을 개척해 온 동아오츠카</p>
+                </hgroup>
+                <div class="product_swiper"><!--oveflow: hidden / position-->
+                    <div class="box"></div>
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><!--기준부모-->
+                            <div class="p_rank">
+                                <span class="rank_num">1</span><!--포지션 left: 20, top : -30-->
+                                <img src="./img/rank.webp" alt="">
+                            </div>
+                            <div>
+                                <strong>포카리스웨트</strong>
+                                <p>체액과 유사한 전해질 농도로<br> 빠른 수분 보충과 밸런스 제공</p>
+                            </div>
+                            <a href="#">MORE</a>
+                            <img src="./img/pocari222.png" alt="">
+                            <!--position rightL 30 / bottome: 30-->
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="p_rank">
+                                <span class="rank_num">2</span>
+                                <img src="img/rank.webp" alt="">
+                            </div>
+                            <div>
+                                <strong>나랑드사이다</strong>
+                                <p>제로칼로리&제로슈가,<br> 한 톨의 설탕도 넣지 않아<br> 인위적인 단맛 제로!<br> 사이다 본연의 청량함 UP!</p>
+                            </div>
+                            <a href="#">MORE</a>
+                            <img src="img/pocari222.png" alt=""><!--position rightL 30 / bottome: 30-->
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="p_rank">
+                                <span class="rank_num">3</span>
+                                <img src="img/rank.webp" alt="">
+                            </div>
+                            <div>
+                                <strong>나랑드사이다</strong>
+                                <p>제로칼로리&제로슈가,<br> 한 톨의 설탕도 넣지 않아<br> 인위적인 단맛 제로!<br> 사이다 본연의 청량함 UP!</p>
+                            </div>
+                            <a href="#">MORE</a>
+                            <img src="img/pocari222.png" alt=""><!--position rightL 30 / bottome: 30-->
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="p_rank">
+                                <span class="rank_num">4</span>
+                                <img src="img/rank.webp" alt="">
+                            </div>
+                            <div>
+                                <strong>나랑드사이다</strong>
+                                <p>제로칼로리&제로슈가,<br> 한 톨의 설탕도 넣지 않아<br> 인위적인 단맛 제로!<br> 사이다 본연의 청량함 UP!</p>
+                            </div>
+                            <a href="#">MORE</a>
+                            <img src="img/pocari222.png" alt=""><!--position rightL 30 / bottome: 30-->
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="p_rank">
+                                <span class="rank_num">5</span>
+                                <img src="img/rank.webp" alt="">
+                            </div>
+                            <div>
+                                <strong>나랑드사이다</strong>
+                                <p>제로칼로리&제로슈가,<br> 한 톨의 설탕도 넣지 않아<br> 인위적인 단맛 제로!<br> 사이다 본연의 청량함 UP!</p>
+                            </div>
+                            <a href="#">MORE</a>
+                            <img src="img/pocari222.png" alt=""><!--position rightL 30 / bottome: 30-->
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="p_rank">
+                                <span class="rank_num">6</span>
+                                <img src="img/rank.webp" alt="">
+                            </div>
+                            <div>
+                                <strong>나랑드사이다</strong>
+                                <p>제로칼로리&제로슈가,<br> 한 톨의 설탕도 넣지 않아<br> 인위적인 단맛 제로!<br> 사이다 본연의 청량함 UP!</p>
+                            </div>
+                            <a href="#">MORE</a>
+                            <img src="img/pocari222.png" alt=""><!--position rightL 30 / bottome: 30-->
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="p_rank">
+                                <span class="rank_num">7</span>
+                                <img src="img/rank.webp" alt="">
+                            </div>
+                            <div>
+                                <strong>나랑드사이다</strong>
+                                <p>제로칼로리&제로슈가,<br> 한 톨의 설탕도 넣지 않아<br> 인위적인 단맛 제로!<br> 사이다 본연의 청량함 UP!</p>
+                            </div>
+                            <a href="#">MORE</a>
+                            <img src="img/pocari222.png" alt=""><!--position rightL 30 / bottome: 30-->
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="p_rank">
+                                <span class="rank_num">8</span>
+                                <img src="img/rank.webp" alt="">
+                            </div>
+                            <div>
+                                <strong>나랑드사이다</strong>
+                                <p>제로칼로리&제로슈가,<br> 한 톨의 설탕도 넣지 않아<br> 인위적인 단맛 제로!<br> 사이다 본연의 청량함 UP!</p>
+                            </div>
+                            <a href="#">MORE</a>
+                            <img src="img/pocari222.png" alt=""><!--position rightL 30 / bottome: 30-->
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="p_rank">
+                                <span class="rank_num">9</span>
+                                <img src="img/rank.webp" alt="">
+                            </div>
+                            <div>
+                                <strong>나랑드사이다</strong>
+                                <p>제로칼로리&제로슈가,<br> 한 톨의 설탕도 넣지 않아<br> 인위적인 단맛 제로!<br> 사이다 본연의 청량함 UP!</p>
+                            </div>
+                            <a href="#">MORE</a>
+                            <img src="img/pocari222.png" alt=""><!--position rightL 30 / bottome: 30-->
+                        </li>
+                    </ul>
+                    <div class="controls">
+                        <div class="swiper-prev swiper-mode4" ></div>
+                        <div class="swiper-pagination"></div> 
+                        <div class="swiper-next swiper-mode4"></div>
+                    </div>                   
+                </div>
+            </div>
+        </section>
+        
+        <!-- 섹션5 -->
+        <section class="business">
+            <!-- <div class="pin_name">
+                <span>&boxh; Business</span>
+            </div> -->
+            <!-- <div class="business_content"> -->
+                <video src="img/sea1.mp4" autoplay muted loop></video>
+                <!-- https://www.doosangeosolution.com/kr/ -->
+                <div class="business_text">
+                    <p>고객의 건강과 행복을 최우선으로 하는 동아오츠카</p>
+                    <span>블루라벨 캠페인, 스포츠 산업을 육성시키는 분야 등<br> 다양한 분야를 통해서 기업의 사회적 책임을 다하고 있습니다.</span>
+                </div>
+            <!-- </div> -->
+        </section>
+
+        <!-- 섹션6 -->
+        <section class="business2">
+            <div class="pin_name">
+                <span>&boxh; Business</span>
+            </div>
+            <div class="container">
+                <div class="business2_content">
+                    <h2>We are</h2>
+                    <a href="#" class="view_more">View more</a>  
+                    <!-- 변하지않고 고정 position -->
+                    <!-- slider main container -->
+                    <div class="business2_swiper">
+                        <!-- additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="b_con_box">
+                                    <div class="txt_box">
+                                        <span>동아오츠카는 1987년 발매 이후 꾸준히 사랑 받아온 생활 속 음료 포카리스웨트를 중심으로<br> 여러단체들과 협찬, 공식 음료로도 확실히 자리매김하며 많은 사랑을 받고 있습니다.</span>
+                                    </div>
+                                    <!-- <video src="img/business-video1.mp4" autoplay muted></video> -->
+                                    <div class="img_box">
+                                        <video src="/img/business-video1.mp4" autoplay muted loop></video>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="b_con_box">
+                                    <div class="txt_box">
+                                        <span>동아오츠카는 1987년 발매 이후 꾸준히 사랑 받아온 생활 속 음료 포카리스웨트를 중심으로<br> 여러단체들과 협찬, 공식 음료로도 확실히 자리매김하며 많은 사랑을 받고 있습니다.</span>
+                                    </div>
+                                    <div class="img_box">
+                                        <img src="img/business-basketball.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="b_con_box">
+                                    <div class="txt_box">
+                                        <span>동아오츠카는 고객이 만족할 수 있는 건강음료를 생산해 내고 고객으로부터 받은 사랑을<br> 다시 사회에 환원하고자 매월 25일을 이온데이로 정해 사내 직원으로 구성된<br> 봉사 활동 팀이 연탄배달, 주변 환경 미화, 사회복지시설 보조교사 등의 활동을 펼쳐오고 있습니다.</span>
+                                    </div>
+                                    <div class="img_box">
+                                        <img src="img/business-3.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="b_con_box">
+                                    <div class="txt_box">
+                                        <span>동아오츠카는 고객이 만족할 수 있는 건강음료를 생산해 내고 고객으로부터 받은 사랑을<br> 다시 사회에 환원하고자 매월 25일을 이온데이로 정해 사내 직원으로 구성된<br> 봉사 활동 팀이 연탄배달, 주변 환경 미화, 사회복지시설 보조교사 등의 활동을 펼쳐오고 있습니다.</span>
+                                    </div>
+                                    <div class="img_box">
+                                        <img src="img/business-4.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="b_con_box">
+                                    <div class="txt_box">
+                                        <span>포카리스웨트 키즈 캠페인’을 통해 아이들의 신체 활동 증진과 정서적 안정을 돕고,<br> ‘홍명보 장학 재단’과 MOU를 체결해 스포츠 꿈나무들에게 장학금과 용품을 후원하며,<br> 이승엽, 박찬호, 양준혁 야구 재단을 통해 유소년 야구 캠프를 후원하고<br> 청소년 스포츠 기회 확대와 인재 육성에 힘쓰고 있습니다</span>
+                                    </div>
+                                    <div class="img_box">
+                                        <img src="img/business-5.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="b_con_box">
+                                    <div class="txt_box">
+                                        <span>야구, 농구, 마라톤 등 빅 스포츠 공식 지원 외에도 핸드볼, 아이스하키, 복싱 등<br> 비인기 종목과 홀트 장애인 농구 등 장애인 스포츠에 후원을 통한<br> 복지사회 구현의 장을 제공하고 있습니다.</span>
+                                    </div>
+                                    <div class="img_box">
+                                        <img src="img/business-7.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="b_con_box">
+                                    <div class="txt_box">
+                                        <span>동아오츠카의 전 임직원은 고객으로부터 받은 사랑을 다시 사회에 환원하고자 앞으로도<br> 더욱 다양한 사회적 활동으로 소비자와 소통할 것을 약속드립니다.</span>
+                                    </div>
+                                    <div class="img_box">
+                                        <img src="img/business-8.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="b_con_box">
+                                    <div class="txt_box">
+                                        <span>포카리스웨트 키즈 캠페인’을 통해 아이들의 신체 활동 증진과 정서적 안정을 돕고,<br> ‘홍명보 장학 재단’과 MOU를 체결해 스포츠 꿈나무들에게 장학금과 용품을 후원하며,<br> 이승엽, 박찬호, 양준혁 야구 재단을 통해 유소년 야구 캠프를 후원하고<br> 청소년 스포츠 기회 확대와 인재 육성에 힘쓰고 있습니다</span>
+                                    </div>
+                                    <div class="img_box">
+                                        <img src="img/business-6.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide_move_3">
+                            <div class="event2_thumb swiper-pagination"></div>
+                            <!-- <div class="swiper-prev swiper-mode6" ></div> -->
+                            <!-- <div class="swiper-next swiper-mode6" ></div> -->
+
+                            <!-- <button class="btn_3">
+                                <i class="ri-arrow-left-long-line"></i>
+                                <i class="ri-arrow-right-long-line"></i>
+                            </button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션7 -->
+        <section class="news">
+            <div class="pin_name">
+                <span> &boxh; News</span>
+            </div>
+            <div class="container">
+                <div class="news_content">
+                    <div class="news_top">
+                        <h2>News</h2>
+                        <span>고객의 건강을 생각하는 동아오츠카의 최근 소식을 전해드립니다.</span>
+                        <a href="#" class="view_more">View more
+                        <!-- <i class="ri-arrow-right-up-long-line"></i> -->
+                        </a>
+                    </div>
+                    <div class="news_below">                      
+                        <div class="news_img_swiper">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="n_img">
+                                            <img src="img/news-wonhee.jpg" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="n_img">
+                                            <img src="img/news-2.jpg" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="n_img">
+                                            <img src="img/news-3.jpg" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="n_img">
+                                            <img src="img/news-4.png" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="n_img">
+                                            <img src="img/news-5.png" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="n_img">
+                                            <img src="img/news-6.jpg" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="n_img">
+                                            <img src="img/news-7.jpeg" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="n_img">
+                                            <img src="img/news-8.jpg" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="slide_move_7">
+                                <div class="swiper-prev"></div>
+                                <div class="swiper-next"></div>
+                            </div>
+                        </div>
+                        <div class="news_text_swiper">
+                            <ul class="swiper-wrapper news2">
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="n_text">
+                                            <p>동아오츠카, 포카리스웨트 30대 모델로 ‘아일릿(ILLIT)’ 발탁</p>
+                                            <span>2025-03-26</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="n_img">
+                                            <p>동아오츠카, 오로나민C ‘경품뽑고 생기팡팡’ 경품 증정 이벤트</p>
+                                            <span>2025-03-24</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="n_img">
+                                            <p>동아오츠카, 데미소다 레드애플 편의점 4사 입점</p>
+                                            <span>2025-03-19</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="n_img">
+                                            <p>동아오츠카, 캔에 담긴 물 ‘THE 마신다’ 2025 호텔페어 참가</p>
+                                            <span>2025-02-11</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="n_img">
+                                            <p>동아오츠카, SPC 던킨과 나랑드사이다 신제품 출시</p>
+                                            <span>2024-10-18</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="n_img">
+                                            <p>동아오츠카 박철호 대표이사 사장, 아동학대 예방 릴레이 캠페인 동참</p>
+                                            <span>2024-10-21</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="n_img">
+                                            <p>동아오츠카, ‘2025 태백 겨울 축제’ 참가… 분말 활용 따뜻한 포카리스웨트 제공</p>
+                                            <span>2025-02-13</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#">
+                                        <div class="n_img">
+                                            <p>동아오츠카, 크리스마스 맞아 '포카리 산타를 이겨라' 이벤트 진행</p>
+                                            <span>2024-12-24</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>                            
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="footer">
+        <div class="container">
+            <div class="footer_lnfo">
+                <a href="#">
+                    <img src="../img/logo-donga.png" alt="">
+                </a>
+                <div>
+                    <address>
+                        서울특별시 동대문구 천호대로 64
+                        <span>TEL</span> 080-999-7644
+                        <span>대표이사</span> 박철호
+                    </address>
+                    <p class="copyright">Copyright&copy;Donga-Otsuka co.</p>
+                    <a href="instagram.com/donga_otsuka" target="_blank">
+                        <i class="ri-instagram-fill"></i>
+                    </a>
+                    <a href="www.youtube.com/@donga_otsuka" target="_blank">
+                        <i class="ri-youtube-fill"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
