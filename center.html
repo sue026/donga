@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Swiper + Custom Progress Bar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background: #111;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 400px;
+            position: relative;
+        }
+
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .img_box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .txt_box {
+            position: absolute;
+            color: white;
+            font-size: 2rem;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 10;
+        }
+
+        .custom_pagination_wrap {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 20;
+            color: #fff;
+        }
+
+        .custom_pagination_wrap .num {
+            font-weight: bold;
+        }
+
+        .progress {
+            position: relative;
+            width: 100px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            overflow: hidden;
+            border-radius: 2px;
+        }
+
+        .bar {
+            width: 0%;
+            height: 100%;
+            background: #fff;
+        }
+
+        .bar.animate {
+            animation: progressBarAnim 3s linear forwards;
+        }
+
+        @keyframes progressBarAnim {
+            0% {
+                width: 0%;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="swiper business2_swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="img_box"><img src="https://picsum.photos/id/1015/800/400" alt=""></div>
+                <div class="txt_box">Slide 1 Text</div>
+            </div>
+            <div class="swiper-slide">
+                <div class="img_box"><img src="https://picsum.photos/id/1016/800/400" alt=""></div>
+                <div class="txt_box">Slide 2 Text</div>
+            </div>
+            <div class="swiper-slide">
+                <div class="img_box"><img src="https://picsum.photos/id/1018/800/400" alt=""></div>
+                <div class="txt_box">Slide 3 Text</div>
+            </div>
+        </div>
+
+        <div class="swiper-pagination" style="display:none;"></div>
+
+        <div class="custom_pagination_wrap">
+            <span class="num current">01</span>
+            <div class="progress">
+                <div class="bar"></div>
+            </div>
+            <span class="num total">03</span>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        const currentEl = document.querySelector('.custom_pagination_wrap .current');
+        const totalEl = document.querySelector('.custom_pagination_wrap .total');
+        const barEl = document.querySelector('.custom_pagination_wrap .bar');
+
+        const swiper = new Swiper('.business2_swiper', {
+            slidesPerView: 1,
+            loop: true,
+            effect: 'fade',
+            autoplay: {
+                delay: 3000,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            on: {
+                init: function () {
+                    const totalSlides = document.querySelectorAll('.business2_swiper .swiper-slide:not(.swiper-slide-duplicate)').length;
+                    totalEl.textContent = totalSlides < 10 ? `0${totalSlides}` : totalSlides;
+                    currentEl.textContent = `01`;
+
+                    setTimeout(() => {
+                        barEl.classList.add('animate');
+                    }, 50);
+
+                    const activeSlide = document.querySelector('.swiper-slide-active .txt_box');
+                    if (activeSlide) activeSlide.style.opacity = '1';
+                },
+                slideChange: function () {
+                    const current = this.realIndex + 1;
+                    currentEl.textContent = current < 10 ? `0${current}` : current;
+
+                    barEl.classList.remove('animate');
+                    void barEl.offsetWidth;
+                    barEl.classList.add('animate');
+                },
+                slideChangeTransitionStart: function () {
+                    const slides = document.querySelectorAll('.business2_swiper .swiper-slide');
+                    slides.forEach(slide => {
+                        const textBox = slide.querySelector('.txt_box');
+                        if (textBox) textBox.style.opacity = '0';
+                    });
+
+                    const activeSlide = document.querySelector('.business2_swiper .swiper-slide-active');
+                    if (activeSlide) {
+                        const activeTextBox = activeSlide.querySelector('.txt_box');
+                        setTimeout(() => {
+                            if (activeTextBox) activeTextBox.style.opacity = '1';
+                        }, 100);
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

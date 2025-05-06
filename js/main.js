@@ -10,8 +10,8 @@ console.log('devicePixelRatio:', window.devicePixelRatio);
 
 
 /* 헤더 스크롤*/
-window.addEventListener('scroll' ,function() {
-  if(window.scrollY > 10) {
+window.addEventListener('scroll', function () {
+  if (window.scrollY > 10) {
     header.classList.add('scroll')
   }
   else {
@@ -45,7 +45,7 @@ document.querySelector('.header_menu_popup .ri-close-line').addEventListener('cl
 const header = document.querySelector('header');
 const menuItems = document.querySelectorAll('header #gnb .dep1 > li');
 const dep2Links = document.querySelectorAll('header .dep2 a');
-  
+
 // 메뉴 hover 시 열기
 menuItems.forEach((item) => {
   item.addEventListener('mouseenter', function () {
@@ -79,8 +79,8 @@ const utilBtn = document.querySelector('.header_util button')
 const utilList = document.querySelector('.header_util ul')
 
 // utilBtn.addEventListener('click', function() {})
-utilBtn.addEventListener('click', function() {
-  if(utilList.style.display === 'none') {
+utilBtn.addEventListener('click', function () {
+  if (utilList.style.display === 'none') {
     utilList.style.display = 'block'
   } else {
     utilList.style.display = 'none'
@@ -138,8 +138,8 @@ window.addEventListener('resize', () => {
 const menuIcons = document.querySelectorAll('.header_menu_popup .dep1 > li > a > i');
 const dep2Menus = document.querySelectorAll('.header_menu_popup .dep2');
 
-menuIcons.forEach(function(item, i) {
-  item.addEventListener('click', function(event) {
+menuIcons.forEach(function (item, i) {
+  item.addEventListener('click', function (event) {
     event.preventDefault(); // a 태그의 기본 동작 방지
 
     const isActive = dep2Menus[i].classList.contains('active');
@@ -181,7 +181,7 @@ menuIcons.forEach(function(item, i) {
 //     menuDep2.style.display = 'none'
 //   }
 // })
-  
+
 
 
 /* 메인 비주얼 */
@@ -248,15 +248,16 @@ const esgSwiper = new Swiper('.preview_swiper', {
 
 
 /* Business2 */
+/*
 const businesSwiper2 = new Swiper('.business2_swiper', {
   slidesPerView: 1,
   autoplay: {
     delay: 3000,
   },
   effect: 'fade',
-  fadeEffect: {
-    crossFade: true, // 이미지 부드럽게 페이드 처리
-  },
+  // fadeEffect: {
+  //   crossFade: true, // 이미지 부드럽게 페이드 처리
+  // },
   loop: true,
   clickable: true,
   pagination: {
@@ -304,11 +305,60 @@ const businesSwiper2 = new Swiper('.business2_swiper', {
   }
 });
 
+*/
+const currentEl = document.querySelector('.custom_pagination_wrap .current');
+const totalEl = document.querySelector('.custom_pagination_wrap .total');
+const barEl = document.querySelector('.custom_pagination_wrap .bar');
+const businesSwiper2 = new Swiper('.business2_swiper', {
+  slidesPerView: 1,
+  loop: true,
+  effect: 'fade',
+  autoplay: {
+    delay: 3000,
+  },
+  on: {
+    init: function () {
+      const totalSlides = document.querySelectorAll('.business2_swiper .swiper-slide:not(.swiper-slide-duplicate)').length;
+      totalEl.textContent = totalSlides < 10 ? `0${totalSlides}` : totalSlides;
+      currentEl.textContent = `01`;
+
+      setTimeout(() => {
+        barEl.classList.add('animate');
+      }, 50);
+
+      const activeSlide = document.querySelector('.swiper-slide-active .txt_box');
+      if (activeSlide) activeSlide.style.opacity = '1';
+    },
+    slideChange: function () {
+      const current = this.realIndex + 1;
+      currentEl.textContent = current < 10 ? `0${current}` : current;
+
+      barEl.classList.remove('animate');
+      void barEl.offsetWidth;
+      barEl.classList.add('animate');
+    },
+    slideChangeTransitionStart: function () {
+      const slides = document.querySelectorAll('.business2_swiper .swiper-slide');
+      slides.forEach(slide => {
+        const textBox = slide.querySelector('.txt_box');
+        if (textBox) textBox.style.opacity = '0';
+      });
+
+      const activeSlide = document.querySelector('.business2_swiper .swiper-slide-active');
+      if (activeSlide) {
+        const activeTextBox = activeSlide.querySelector('.txt_box');
+        setTimeout(() => {
+          if (activeTextBox) activeTextBox.style.opacity = '1';
+        }, 100);
+      }
+    }
+  }
+});
 
 /* News */
 const newsSwiper = new Swiper('.news_img_swiper', {
   autoplay: true,
-  slidesPerView: 5, 
+  slidesPerView: 5,
   spaceBetween: 40,
   centeredSlides: true,
   loopedSlides: 2,
@@ -329,7 +379,7 @@ const newsSwiper2 = new Swiper('.news_text_swiper', {
   //   nextEl: '.swiper-next',
   //   prevEl: '.swiper-prev',
   // },
-  // effect: 'fade',
+  effect: 'fade',
   // watchSlidesProgress: true,
   // freeMode: true,
 })
@@ -341,7 +391,7 @@ const newsSwiper2 = new Swiper('.news_text_swiper', {
 const productSwiper = new Swiper('.product_swiper', {
   autoplay: true,
   loop: true,
-  slidesPerView: 'auto', 
+  slidesPerView: 'auto',
   spaceBetween: 20,
   pagination: {
     el: '.swiper-pagination',
@@ -368,16 +418,16 @@ gsap.timeline({
     scrub: 1.5,
   }
 })
-.to('.business video', {
-  scale: 3.3,
-  borderRadius: '0%',
-  duration: 1
-})
-.to('.business_text', {
-  autoAlpha: 1,
-  y: 0,
-  duration: 2
-});
+  .to('.business video', {
+    scale: 3.3,
+    borderRadius: '0%',
+    duration: 1
+  })
+  .to('.business_text', {
+    autoAlpha: 1,
+    y: 0,
+    duration: 2
+  });
 
 // 📌 2. business2가 등장할 때 텍스트 & 비디오 사라짐
 gsap.to('.business_text', {
